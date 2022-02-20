@@ -1,0 +1,20 @@
+version: '3'
+services:
+    auth-service:
+      build: .
+      restart: always
+      ports: 
+        - "7070:7070"
+      volumes:
+        - ./:/usr/src/app
+      links:
+        - mongodb
+    mongodb:
+      image: mongo
+      ports:
+        - 27017:27017
+      volumes:
+        - mongodb:/data/db
+      
+volumes:
+  mongodb:

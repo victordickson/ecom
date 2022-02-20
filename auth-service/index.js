@@ -6,7 +6,7 @@ const User = require("./User");
 const jwt = require("jsonwebtoken");
 
 mongoose.connect(
-    "mongodb://localhost/auth-service",
+    "mongodb://mongodb:27017/auth-service",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
